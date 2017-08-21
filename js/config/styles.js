@@ -3,7 +3,11 @@
  */
 
 export const colors = {
-    red: '#cf392a'
+    MediumGrey: '#999999',
+    LightGrey: '#e6e6e6',
+    Blue: '#8797D6',
+    Purple: '#9963ea',
+    Red: '#cf392a'
 };
 
 export const typography = {
