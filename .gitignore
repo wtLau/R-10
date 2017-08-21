@@ -52,7 +52,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
-js/assets/
+js/assets/*
 
 !js/assets/fonts
 !js/assets/images
