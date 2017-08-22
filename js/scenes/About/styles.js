@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { typography } from '../../config/styles'
 
 export const styles = {
     container: {
@@ -6,11 +7,15 @@ export const styles = {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
+      padding: 10,
     },
-    text: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
+    p: {
+      fontSize: typography.baseSize,
+    },
+    title: {
+      fontSize: typography.headerSize,
+      fontWeight: '500',
+      fontFamily: typography.main,   
     },
     image: {
         width: '60%',
@@ -19,7 +24,6 @@ export const styles = {
         padding: 20,
     },
     border: {
-        // flex: ,
         height: StyleSheet.hairlineWidth,
         backgroundColor: '#999999'
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Router from './Routes'
 import { StackNavigation, TabNavigation, TabNavigationItem as TabItem } from '@expo/ex-navigation';
-
+import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { colors, typography } from '../config/styles'
@@ -35,6 +35,7 @@ class NavigationLayout extends Component {
                 <TabItem
                     id="schedule"
                     title="Schedule"
+                    renderTitle={this.renderTitle}                    
                     renderIcon={(isSelected) => this.renderIcon("ios-calendar", isSelected)}
                 >
                     <StackNavigation
@@ -47,6 +48,7 @@ class NavigationLayout extends Component {
                 <TabItem
                     id="map"
                     title="Map"
+                    renderTitle={this.renderTitle}                    
                     renderIcon={(isSelected) => this.renderIcon("ios-map", isSelected) }
                 >
                     <StackNavigation
@@ -58,6 +60,7 @@ class NavigationLayout extends Component {
                 <TabItem
                     id="faves"
                     title="Faves"
+                    renderTitle={this.renderTitle}
                     renderIcon={(isSelected) => this.renderIcon("ios-heart", isSelected) }
                 >
                     <StackNavigation
@@ -69,6 +72,7 @@ class NavigationLayout extends Component {
                 <TabItem
                     id="about"
                     title="About"
+                    renderTitle={this.renderTitle}                   
                     renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected) }
                 >
                     <StackNavigation
@@ -84,6 +88,15 @@ class NavigationLayout extends Component {
     renderIcon(iconName, isSelected) {
         const color = isSelected ?  colors.White : colors.MediumGrey
         return <Icon name={iconName} size={typography.iconSize} color={color} />
+    }
+
+    renderTitle(isSelected, title) {
+        const styles ={
+            color: isSelected ? colors.White : colors.MediumGrey,
+            fontFamily: typography.main,
+            fontSize: typography.navFontSize,
+        }
+        return <Text style={styles}>{title}</Text>
     }
 }
 

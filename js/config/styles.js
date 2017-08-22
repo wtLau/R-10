@@ -12,7 +12,9 @@ export const colors = {
 };
 
 export const typography = {
+    navFontSize: 10,
     baseSize: 16,
+    headerSize: 30,
     iconSize: 24,
     fontMain: 'Montserrat',
     fontMainLight: 'Montserrat-Light'
