@@ -21,7 +21,11 @@ Add me to your directory.
 
 ### 2. Install the dev dependencies
 
-Next you'll need to run `npm install` and `meteor npm install` next to install the node modules you'll need for Meteor, React, Babel etc.
+Next you'll need to run `npm install` to install the node modules you'll need for React, Babel etc.
+
+### Link Native Dependency
+
+```react-native link```
 
 ### Starting the Project
 
