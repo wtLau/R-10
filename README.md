@@ -32,6 +32,7 @@ Next you'll need to run `npm install` and `meteor npm install` next to install t
 - [React](https://facebook.github.io/react/) - A javaScript library for building user interfaces
 - [React-Native](https://facebook.github.io/react-native/) - React Native lets you build mobile apps using only JavaScript
 - [Redux](http://redux.js.org/) - Redux is a predictable state container for JavaScript apps.
+- [Redux-Thunk](https://github.com/gaearon/redux-thunk) - Thunk middleware for Redux.
 - [Visual Studio Code](https://code.visualstudio.com/) - A code editor redefined and optimized for building and debugging modern web and cloud applications.
 - [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [Material-UI](http://www.material-ui.com/#/) - A Set of React Components that Implement Google's Material Design

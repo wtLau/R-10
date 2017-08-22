@@ -1,15 +1,12 @@
-// import { combineReducers } from 'redux';
-// import { reducer as formReducer } from 'redux-form';
+import { combineReducers } from 'redux';
 
-// import { SignUpReducer } from './modules/SignUp'
-// import { FormRedirectRenderer } from './modules/Form'
-// import { reviewReducer } from './modules/Reviews';
-// import { LogInReducer } from './modules/LogIn';
+import { NavigationReducer } from '@expo/ex-navigation';
+import { AboutReducer } from './modules/About'
+// import { FormRedirectRenderer } from './modules/User'
 
-// export default combineReducers({
-//   form: formReducer,
-//   review: reviewReducer,
-//   formRedirect: FormRedirectRenderer,
-//   registerUser: SignUpReducer,
-//   logIn: LogInReducer
-// })
+
+export default combineReducers({
+    navigation: NavigationReducer,
+    about: AboutReducer,
+//   review: reviewReducer
+})

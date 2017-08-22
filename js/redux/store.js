@@ -1,29 +1,22 @@
-// import { createStore, applyMiddleware } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
-// import { Tracker } from 'meteor/tracker';
-// import logger from 'redux-logger';
-// import combineReducers from './combine-reducers';
+import { createNavigationEnabledStore } from '@expo/ex-navigation';
+import { compose, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+import combineReducers from './combine-reducer'; // we haven't made these yet...
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // definitely enable Redux dev tools!
+
+const createStoreWithNavigation = createNavigationEnabledStore({
+    createStore,
+    navigationStateKey: 'navigation',
+}); // as per the ExNavigation docs...
 
 
-// import { Forms } from '../../api/forms';
-
-// export default () => {
-//     const store = createStore(
-//                     combineReducers,
-//                     composeWithDevTools(
-//                         applyMiddleware(
-//                             logger
-//                         )
-//                     )
-//     );
-
-//     Tracker.autorun(() => {
-//         store.dispatch({
-//             type: 'LOAD_FORMS',
-//             form: Forms.find().fetch(),
-//         });
-//     });
-
-
-//     return store;
-// }
+const store = createStoreWithNavigation(
+    combineReducers,
+    {}, // initial state
+    composeEnhancers(
+        applyMiddleware(thunk)
+    ) // enhancers
+);
+export default store;
