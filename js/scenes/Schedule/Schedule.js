@@ -9,12 +9,12 @@ import {
 
 import { styles } from './styles'
 
-const User = ({ data }) => (
+const Schedule = ({ data }) => (
     <View style={styles.container}>
     </View>
 )
 
 
-User.propTypes = {}
+Schedule.propTypes = {}
 
-export default User
+export default Schedule

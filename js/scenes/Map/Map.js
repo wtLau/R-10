@@ -1,17 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { 
-    View
+    Text, 
+    View,
+    Image,
+    FlatList
 } from 'react-native';
 
 import { styles } from './styles'
 
-const UserAvatar = ({ data }) => (
-    <View style={styles.border}>
+const Map = ({ data }) => (
+    <View style={styles.container}>
     </View>
 )
 
 
-UserAvatar.propTypes = {}
+Map.propTypes = {}
 
-export default UserAvatar
+export default Map

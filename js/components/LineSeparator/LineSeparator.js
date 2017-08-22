@@ -6,12 +6,12 @@ import {
 
 import { styles } from './styles'
 
-const UserAvatar = ({ data }) => (
+const LineSeparator = ({ data }) => (
     <View style={styles.border}>
     </View>
 )
 
 
-UserAvatar.propTypes = {}
+LineSeparator.propTypes = {}
 
-export default UserAvatar
+export default LineSeparator

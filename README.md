@@ -35,6 +35,7 @@ Next you'll need to run `npm install` and `meteor npm install` next to install t
 - [Visual Studio Code](https://code.visualstudio.com/) - A code editor redefined and optimized for building and debugging modern web and cloud applications.
 - [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [Material-UI](http://www.material-ui.com/#/) - A Set of React Components that Implement Google's Material Design
+- [ExNavigation](https://github.com/expo/ex-navigation#installation) - A route-centric, batteries-included navigation library for Expo and React Native that works seamlessly on Android and iOS.
 
 
 ## Developed By

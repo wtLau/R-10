@@ -7,15 +7,21 @@ export const styles = {
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
     },
-    welcome: {
+    text: {
       fontSize: 20,
       textAlign: 'center',
       margin: 10,
     },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
+    image: {
+        width: '60%',
+        height: 100,
+        resizeMode: 'contain',
+        padding: 20,
     },
+    border: {
+        // flex: ,
+        height: StyleSheet.hairlineWidth,
+        backgroundColor: '#999999'
+    }
   }
   

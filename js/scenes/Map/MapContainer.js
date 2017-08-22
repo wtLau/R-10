@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ActivityIndicator } from 'react-native';
 
-import User from './User'
+import Map from './Map'
 
-class UserContainer extends Component {
+class MapContainer extends Component {
 
     static propTypes = {}
 
@@ -14,9 +14,9 @@ class UserContainer extends Component {
                 <ActivityIndicator animating={true} size="small" color="black" />
             );
         } else {
-            return <User />
+            return <Map />
         }
     }
 }
 
-export default UserContainer
+export default MapContainer
