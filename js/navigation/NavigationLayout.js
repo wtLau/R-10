@@ -3,9 +3,13 @@ import React, { Component } from 'react'
 import Router from './Routes'
 import { StackNavigation, TabNavigation, TabNavigationItem as TabItem } from '@expo/ex-navigation';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import { colors } from '../config/styles'
+
 const defaultRouteConfig = {
     navigationBar: {
-        tintColor: 'blue',
+        tintColor: colors.White,
         // titleStyle: {
             
         // },
@@ -26,10 +30,13 @@ class NavigationLayout extends Component {
             <TabNavigation
                 id="main"
                 navigatorUID="main"
-                initialTab="about">
+                initialTab="about"
+                tabBarColor= "black" >
                 <TabItem
                     id="schedule"
-                    title="Schedule">
+                    title="Schedule"
+                    renderIcon={(isSelected) => this.renderIcon("ios-calendar", isSelected)}
+                >
                     <StackNavigation
                         id="schedule"
                         navigatorUID="schedule"
@@ -39,32 +46,44 @@ class NavigationLayout extends Component {
                 </TabItem>
                 <TabItem
                     id="map"
-                    title="Map">
+                    title="Map"
+                    renderIcon={(isSelected) => this.renderIcon("ios-map", isSelected) }
+                >
                     <StackNavigation
                         id="map"
                         initialRoute={Router.getRoute('map')}
+                        defaultRouteConfig= {defaultRouteConfig}                        
                     />
                 </TabItem>
                 <TabItem
                     id="faves"
-                    title="Faves">
+                    title="Faves"
+                    renderIcon={(isSelected) => this.renderIcon("ios-heart", isSelected) }
+                >
                     <StackNavigation
                         id="faves"
                         initialRoute={Router.getRoute('faves')}
+                        defaultRouteConfig= {defaultRouteConfig}                        
                     />
                 </TabItem>
                 <TabItem
                     id="about"
-                    title="About">
-                    {/* selectedStyle={styles.selectedTab}
-                    renderIcon={(isSelected) => <Image source={require('./assets/images/about.png')} /> } */}
+                    title="About"
+                    renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected) }
+                >
                     <StackNavigation
                         id="about"
+                        defaultRouteConfig= {defaultRouteConfig}
                         initialRoute={Router.getRoute('about')}
                     />
                 </TabItem>
             </TabNavigation>
         );
+    }
+
+    renderIcon(iconName, isSelected) {
+        const color = isSelected ?  colors.White : colors.MediumGrey
+        return <Icon name={iconName} size={24} color={color} />
     }
 }
 
