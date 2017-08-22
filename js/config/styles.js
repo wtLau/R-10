@@ -13,6 +13,7 @@ export const colors = {
 
 export const typography = {
     baseSize: 16,
+    iconSize: 24,
     fontMain: 'Montserrat',
     fontMainLight: 'Montserrat-Light'
 };

@@ -5,7 +5,7 @@ import { StackNavigation, TabNavigation, TabNavigationItem as TabItem } from '@e
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import { colors } from '../config/styles'
+import { colors, typography } from '../config/styles'
 
 const defaultRouteConfig = {
     navigationBar: {
@@ -83,7 +83,7 @@ class NavigationLayout extends Component {
 
     renderIcon(iconName, isSelected) {
         const color = isSelected ?  colors.White : colors.MediumGrey
-        return <Icon name={iconName} size={24} color={color} />
+        return <Icon name={iconName} size={typography.iconSize} color={color} />
     }
 }
 
