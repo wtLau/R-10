@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
 import { NavigationReducer } from '@expo/ex-navigation';
-import { AboutReducer } from './modules/About'
+import { CodeOfConductReducer } from './modules/About'
 // import { FormRedirectRenderer } from './modules/User'
 
 
 export default combineReducers({
     navigation: NavigationReducer,
-    about: AboutReducer,
+    COFData: CodeOfConductReducer,
 //   review: reviewReducer
 })

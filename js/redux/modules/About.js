@@ -2,23 +2,40 @@
 const LOAD_CODE_OF_CONDUCT = 'LOAD_CODE_OF_CONDUCT';
 
 // Action Creators
-export function loadFormRedirect(redirectOnSubmit) {
+export function loadCodeOfConduct(CodeOfConductData) {
   return {
     type: LOAD_CODE_OF_CONDUCT,
-    payload: redirectOnSubmit
+    payload: CodeOfConductData
   };
+}
+
+// Fetch Action, Thunk
+export function fetchCodeOfConduct() {
+  return function (dispatch) {
+    let endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(json => { 
+            const Data = json
+            dispatch(loadCodeOfConduct(Data)) 
+        })
+        .catch(error => console.log(`Error fetching JSON: ${error}`));
+    }
 }
 
 // Reducers
 const initialState = {
-    Loading: false,
+    isLoading: true,
     Data: [],
 };
 
-export function AboutReducer(state = initialState, action) {
+export function CodeOfConductReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_CODE_OF_CONDUCT:
-        return { ...state, Redirect: action.payload };
+        return {  
+            isLoading: false, 
+            Data: action.payload 
+        };
     default:
         return state;
 

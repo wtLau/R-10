@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+import {fetchCodeOfConduct} from '../../redux/modules/About'
 import { ActivityIndicator } from 'react-native';
-
 import About from './About'
 
 class AboutContainer extends Component {
@@ -9,39 +10,38 @@ class AboutContainer extends Component {
         navigationBar: {
           title: 'About',
         }
-      }
-    
-    constructor() {
-      super();
-      this.state = { data: [], isLoading: true };
     }
+
     componentDidMount() {
-      let endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
-      fetch(endpoint)
-        // if fetch is successful, read our JSON out of the response
-        .then(response => response.json())
-        .then(data => {
-          this.setState({ data });
-        })
-        .catch(error => console.log(`Error fetching JSON: ${error}`));
+        this.props.dispatch(fetchCodeOfConduct())
     }
-    componentDidUpdate() {
-      if ( this.state.data && this.state.isLoading ) {
-        this.setState({ isLoading: false });
-      }
-    }    
 
     static propTypes = {}
 
     render() {
-        if (this.state.isLoading) {
-            return (
-                <ActivityIndicator animating={true} size="small" color="black" />
-            );
-        } else {
-            return <About data={this.state.data}/>
-        }
+        const loading = this.props.COFData.isLoading;
+        if (loading) return (
+            <ActivityIndicator animating={true} size="small" color="black" />
+        )
+
+        return <About data={this.props.COFData.Data}/>
     }
 }
 
-export default AboutContainer
+AboutContainer.propTypes = {
+    COFData: PropTypes.shape({
+        Data: PropTypes.arrayOf(PropTypes.shape({
+            description: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+        })),
+        isLoading: PropTypes.bool.isRequired
+    }),
+}
+
+function mapStateToProps(state) {
+  return {
+        COFData: state.COFData,
+  };
+}
+
+export default connect(mapStateToProps)(AboutContainer)
