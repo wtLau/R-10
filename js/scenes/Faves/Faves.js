@@ -9,12 +9,13 @@ import {
 
 import { styles } from './styles'
 
-const User = ({ data }) => (
+const Faves = () => (
     <View style={styles.container}>
+        <Text>This is Faves</Text>
     </View>
 )
 
 
-User.propTypes = {}
+Faves.propTypes = {}
 
-export default User
+export default Faves

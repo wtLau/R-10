@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ActivityIndicator } from 'react-native';
 
-import Schedule from './Schedule'
+import Faves from './Faves'
 
-class ScheduleContainer extends Component {
+class FavesContainer extends Component {
     static route = {
         navigationBar: {
-          title: 'Schedule',
+          title: 'Faves',
         }
       }
 
@@ -19,9 +19,9 @@ class ScheduleContainer extends Component {
         //         <ActivityIndicator animating={true} size="small" color="black" />
         //     );
         // } else {
-            return <Schedule />
+            return <Faves />
         // }
     }
 }
 
-export default ScheduleContainer
+export default FavesContainer

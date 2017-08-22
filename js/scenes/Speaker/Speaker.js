@@ -9,8 +9,9 @@ import {
 
 import { styles } from './styles'
 
-const Speaker = ({ data }) => (
+const Speaker = () => (
     <View style={styles.container}>
+        <Text> This is Speaker Page</Text>
     </View>
 )
 

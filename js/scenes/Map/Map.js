@@ -11,6 +11,7 @@ import { styles } from './styles'
 
 const Map = ({ data }) => (
     <View style={styles.container}>
+        <Text>This is Map</Text>
     </View>
 )
 

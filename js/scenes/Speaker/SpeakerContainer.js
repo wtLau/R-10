@@ -5,17 +5,22 @@ import { ActivityIndicator } from 'react-native';
 import Speaker from './Speaker'
 
 class SpeakerContainer extends Component {
+    static route = {
+        navigationBar: {
+          title: 'Speaker',
+        }
+      }
 
     static propTypes = {}
 
     render() {
-        if (this.state.isLoading) {
-            return (
-                <ActivityIndicator animating={true} size="small" color="black" />
-            );
-        } else {
+        // if (this.state.isLoading) {
+        //     return (
+        //         <ActivityIndicator animating={true} size="small" color="black" />
+        //     );
+        // } else {
             return <Speaker />
-        }
+        // }
     }
 }
 

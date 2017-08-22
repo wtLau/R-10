@@ -9,8 +9,9 @@ import {
 
 import { styles } from './styles'
 
-const Schedule = ({ data }) => (
+const Schedule = () => (
     <View style={styles.container}>
+        <Text> This is Schedule </Text>
     </View>
 )
 

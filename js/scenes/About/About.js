@@ -34,6 +34,11 @@ const About = ({ data }) => (
 )
 
 
-About.propTypes = {}
+About.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+      })).isRequired
+}
 
 export default About
