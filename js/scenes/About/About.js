@@ -7,6 +7,7 @@ import {
     FlatList,
     ScrollView
 } from 'react-native';
+import realm from '../../config/models'
 
 import { styles } from './styles'
 import  LineSeparator  from '../../components/LineSeparator/'
@@ -34,6 +35,7 @@ const About = ({ data }) => (
                 }
             />
         </View>
+        { console.log('the path is: ', realm.path)    }
     </ScrollView>
 )
 

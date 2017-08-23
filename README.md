@@ -42,6 +42,7 @@ Next you'll need to run `npm install` to install the node modules you'll need fo
 - [Visual Studio Code](https://code.visualstudio.com/) - A code editor redefined and optimized for building and debugging modern web and cloud applications.
 - [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons) - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.
+- [React-Native-Linear-Gradient](https://github.com/react-native-community/react-native-linear-gradient) - A <LinearGradient> component for react-native
 
 
 ## Developed By
