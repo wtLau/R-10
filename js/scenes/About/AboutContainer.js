@@ -29,6 +29,7 @@ class AboutContainer extends Component {
 }
 
 AboutContainer.propTypes = {
+    dispatch: PropTypes.func,
     COFData: PropTypes.shape({
         Data: PropTypes.arrayOf(PropTypes.shape({
             description: PropTypes.string.isRequired,

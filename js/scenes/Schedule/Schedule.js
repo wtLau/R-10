@@ -4,15 +4,18 @@ import {
     Text, 
     View,
     Image,
-    FlatList
+    SectionList
 } from 'react-native';
 
 import { styles } from './styles'
 
-const Schedule = () => (
-    <View style={styles.container}>
-        <Text> This is Schedule </Text>
-    </View>
+const Schedule = ({ data }) => (
+    <SectionList
+        renderItem={({item}) => <Text>{item.title} </Text>}
+        renderSectionHeader={(headerItem) => <Text>{headerItem.section.title} </Text>}
+        keyExtractor={data => data.session_id}
+        sections={data}
+    />
 )
 
 
