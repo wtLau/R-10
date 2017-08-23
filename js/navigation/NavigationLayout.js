@@ -6,6 +6,7 @@ import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { colors, typography } from '../config/styles'
+import LinearGradientColor from '../components/LinearGradientColor/'
 
 const defaultRouteConfig = {
     navigationBar: {
@@ -13,9 +14,7 @@ const defaultRouteConfig = {
         // titleStyle: {
             
         // },
-        // renderBackground: () => (
-
-        // )
+        renderBackground: () => <LinearGradientColor/>
     }
 }
 
