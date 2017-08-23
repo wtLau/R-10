@@ -6,16 +6,33 @@ import {
     Image,
     SectionList
 } from 'react-native';
+import * as moment from 'moment'
 
 import { styles } from './styles'
+import  LineSeparator  from '../../components/LineSeparator/'
 
 const Schedule = ({ data }) => (
-    <SectionList
-        renderItem={({item}) => <Text>{item.title} </Text>}
-        renderSectionHeader={(headerItem) => <Text>{headerItem.section.title} </Text>}
-        keyExtractor={data => data.session_id}
-        sections={data}
-    />
+    <View style={styles.container}>
+        <SectionList
+            renderSectionHeader= { 
+                (headerItem) => 
+                    <Text style={[styles.h3, styles.h3_time, styles.wrapper]}>
+                        {moment.unix(headerItem.section.title).format("h:mm A")} </Text>}
+            renderItem={
+                ({item}) => 
+                    <View style={styles.p_wrapper}>
+                        <Text style={styles.h3}>
+                            {item.title}
+                            </Text>
+                        <Text style={styles.p}>
+                            {item.location}
+                            </Text> 
+                    </View>}
+            ItemSeparatorComponent = {()=> <LineSeparator/> }
+            keyExtractor={data => data.session_id}
+            sections={data}
+        />
+    </View>
 )
 
 

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { styles } from './styles'
+import  LineSeparator  from '../../components/LineSeparator/'
 
 const About = ({ data }) => (
     <ScrollView>
@@ -23,7 +24,7 @@ const About = ({ data }) => (
             <Text>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC</Text>
             <FlatList
                 data={data}
-                ItemSeparatorComponent = {()=> <View style={styles.border}/>}
+                ItemSeparatorComponent = {()=> <LineSeparator/> }
                 keyExtractor={item => item.title}
                 renderItem={({ item }) => 
                     <View>

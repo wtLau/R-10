@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native'
-import { typography } from '../../config/styles'
+import { typography, colors } from '../../config/styles'
 
 export const styles = {
     container: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-      padding: 10,
+      backgroundColor: colors.White,      
+      paddingLeft: 10,
+      paddingRight: 10,
     },
     p: {
       fontSize: typography.baseSize,
