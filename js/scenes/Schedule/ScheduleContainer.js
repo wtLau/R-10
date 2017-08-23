@@ -31,16 +31,17 @@ class ScheduleContainer extends Component {
 
 ScheduleContainer.propTypes = {
     dispatch: PropTypes.func,
-    // data: PropTypes.shape({
-    //     data: PropTypes.arrayOf(PropTypes.shape({
-    //         description: PropTypes.string.isRequired,
-    //         location: PropTypes.string.isRequired,
-    //         session_id: PropTypes.string.isRequired,
-    //         speaker: PropTypes.string.isRequired,
-    //         start_time: PropTypes.number.isRequired,
-    //         title: PropTypes.string.isRequired,
-    //     }))
-    // }),
+    data: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.number.isRequired,
+        data: PropTypes.arrayOf(PropTypes.shape({
+            description: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+            session_id: PropTypes.string.isRequired,
+            speaker: PropTypes.string.isRequired,
+            start_time: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,        
+            }))
+        })),
     loading: PropTypes.bool.isRequired
 }
 

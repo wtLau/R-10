@@ -5,17 +5,16 @@ import { ActivityIndicator } from 'react-native';
 import Session from './Session'
 
 class SessionContainer extends Component {
+    static route = {
+        navigationBar: {
+          title: 'Session',
+        }
+      }
 
     static propTypes = {}
 
     render() {
-        if (this.state.isLoading) {
-            return (
-                <ActivityIndicator animating={true} size="small" color="black" />
-            );
-        } else {
-            return <Session />
-        }
+        return <Session data={this.props.sessionData}/>
     }
 }
 
