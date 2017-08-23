@@ -38,6 +38,7 @@ Next you'll need to run `npm install` to install the node modules you'll need fo
 - [Redux](http://redux.js.org/) - Redux is a predictable state container for JavaScript apps.
 - [Redux-Thunk](https://github.com/gaearon/redux-thunk) - Thunk middleware for Redux.
 - [ExNavigation](https://github.com/expo/ex-navigation#installation) - A route-centric, batteries-included navigation library for Expo and React Native that works seamlessly on Android and iOS.
+- [Realm](https://realm.io/) - Realm makes it easy to build modern reactive apps, realtime collaborative features, and offline-first experiences.
 - [Visual Studio Code](https://code.visualstudio.com/) - A code editor redefined and optimized for building and debugging modern web and cloud applications.
 - [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons) - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.
