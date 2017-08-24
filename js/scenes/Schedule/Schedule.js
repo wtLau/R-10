@@ -22,7 +22,7 @@ const Schedule = ({ data }) => (
                         {convertTimeHelper(headerItem.section.title)} </Text>}
             renderItem={
                 ({item}) => 
-                    <View style={styles.horizontal}>
+                    <View>
                         <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
                             <View style={styles.p_wrapper}>
                                 <Text style={styles.h3}>
@@ -33,9 +33,9 @@ const Schedule = ({ data }) => (
                                     </Text> 
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity  style={styles.faveHeart} onPress={() =>goToSession('schedule', item)}>
-                            <FaveHeart style={styles.faveHeart}/>
-                        </TouchableOpacity>
+                        <View style={styles.faveHeart}>
+                            <FaveHeart/>
+                        </View>
                     </View>
                 }
             ItemSeparatorComponent = {()=> <LineSeparator/> }

@@ -5,10 +5,7 @@ export const styles = {
       flex: 1,
       backgroundColor: colors.White,
     },
-    horizontal: {
-        flexDirection: 'row',
-        flexWrap: 'nowrap',
-    },
+
     h3: {
       fontSize: typography.baseSize,
       fontWeight: '600',
