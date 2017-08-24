@@ -1,3 +1,5 @@
+import { formatDataObject } from '../../lib/helperFunction'
+
 // Action Constants
 const LOAD_SPEAKERS = 'LOAD_SPEAKERS';
 
@@ -16,7 +18,7 @@ export function fetchSpeakers() {
     fetch(endpoint)
         .then(response => response.json())
         .then(json => { 
-            const Data = json
+            const Data = formatDataObject(json)
             dispatch(loadSpeakers(Data)) 
         })
         .catch(error => console.log(`Error fetching JSON: ${error}`));

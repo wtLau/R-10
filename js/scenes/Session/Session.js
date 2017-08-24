@@ -15,15 +15,16 @@ import { styles } from './styles'
 
 const Session = ({ data }) => (
     <View style={styles.container}>
-        <Text>{data.location}</Text>
-        <Text>{data.title}</Text>
-        <Text>{convertTimeHelper(data.start_time)}</Text>
-        <Text>{data.description}</Text>
-        <Text>Presented by: {data.speaker}</Text>
+        <Text style={styles.p_grey}>{data.location}</Text>
+        <Text style={styles.h3}>{data.title}</Text>
+        <Text style={styles.p_time}>{convertTimeHelper(data.start_time)}</Text>
+        <Text style={styles.p}>{data.description}</Text>
+        <Text style={styles.p_grey}>Presented by: </Text>
+        <Text style={styles.p}>{data.speaker}</Text>
         <LineSeparator/>
         <TouchableOpacity onPress={() =>goToSession('schedule', data)}>
+            <Text>Remove from Faves</Text>
         </TouchableOpacity>
-
     </View>
 )
 // description, location, session_id, speaker, start_time, title
