@@ -9,8 +9,7 @@ import {
 } from 'react-native';
 import { goToSession } from '../../lib/navigationHelpers'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
-import Icon from 'react-native-vector-icons/Ionicons';
-
+import FaveHeart  from '../../components/FaveHeart/'
 import { styles } from './styles'
 import  LineSeparator  from '../../components/LineSeparator/'
 
@@ -23,6 +22,7 @@ const Schedule = ({ data }) => (
                         {convertTimeHelper(headerItem.section.title)} </Text>}
             renderItem={
                 ({item}) => 
+                    <View>
                     <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
                         <View style={styles.p_wrapper}>
                             <Text style={styles.h3}>
@@ -31,9 +31,12 @@ const Schedule = ({ data }) => (
                             <Text style={styles.p}>
                                 {item.location}
                                 </Text> 
-                            <Icon style={styles.icon_heart} name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}/>
                         </View>
                     </TouchableOpacity>
+                    <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
+                        <FaveHeart/>
+                    </TouchableOpacity>
+                    </View>
                 }
             ItemSeparatorComponent = {()=> <LineSeparator/> }
             keyExtractor={data => data.session_id}
