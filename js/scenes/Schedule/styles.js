@@ -5,6 +5,10 @@ export const styles = {
       flex: 1,
       backgroundColor: colors.White,
     },
+    horizontal: {
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+    },
     h3: {
       fontSize: typography.baseSize,
       fontWeight: '600',
@@ -23,12 +27,17 @@ export const styles = {
     p_wrapper: {
         paddingTop: 12,         
         paddingBottom: 12,       
-        paddingLeft: 15,               
+        paddingLeft: 15,           
     },
     p: {
         fontSize: typography.baseSize,
         fontWeight: '600',
         color: colors.MediumGrey,
         fontFamily: typography.main,
+    },
+    faveHeart: {
+        position: 'absolute',
+        right: 10, 
+        bottom: 4,
     }
   }

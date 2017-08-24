@@ -22,20 +22,20 @@ const Schedule = ({ data }) => (
                         {convertTimeHelper(headerItem.section.title)} </Text>}
             renderItem={
                 ({item}) => 
-                    <View>
-                    <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
-                        <View style={styles.p_wrapper}>
-                            <Text style={styles.h3}>
-                                {item.title}
-                                </Text>
-                            <Text style={styles.p}>
-                                {item.location}
-                                </Text> 
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
-                        <FaveHeart/>
-                    </TouchableOpacity>
+                    <View style={styles.horizontal}>
+                        <TouchableOpacity onPress={() =>goToSession('schedule', item)}>
+                            <View style={styles.p_wrapper}>
+                                <Text style={styles.h3}>
+                                    {item.title}
+                                    </Text>
+                                <Text style={styles.p}>
+                                    {item.location}
+                                    </Text> 
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity  style={styles.faveHeart} onPress={() =>goToSession('schedule', item)}>
+                            <FaveHeart style={styles.faveHeart}/>
+                        </TouchableOpacity>
                     </View>
                 }
             ItemSeparatorComponent = {()=> <LineSeparator/> }
