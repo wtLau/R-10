@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { typography, colors } from '../../config/styles'
 
 export const styles = {
@@ -31,5 +31,15 @@ export const styles = {
         fontWeight: '600',
         color: colors.MediumGrey,
         fontFamily: typography.main,
+    },
+    icon_heart: {
+      ...Platform.select({
+        ios: {
+            color: 'blue',
+        },
+        android: {
+            color: 'red',
+        }
+    })
     }
   }

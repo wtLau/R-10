@@ -1,6 +1,7 @@
 /**
  * Global Styles
  */
+import { Platform, StyleSheet } from 'react-native';
 
 export const colors = {
     MediumGrey: '#999999',
@@ -16,7 +17,15 @@ export const typography = {
     baseSize: 16,
     headerSize: 30,
     iconSize: 24,
-    fontMain: 'Montserrat',
-    fontMainLight: 'Montserrat-Light'
+    fontMainLight: 'Montserrat-Light',    
+    ...Platform.select({
+        ios: {
+            fontMain: 'Montserrat',
+        },
+        android: {
+            fontMain: 'Monserrat-Regular',
+        }
+    })
 };
+
 

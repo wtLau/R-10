@@ -4,10 +4,12 @@ import {
     Text, 
     View,
     SectionList,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform
 } from 'react-native';
 import { goToSession } from '../../lib/navigationHelpers'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles'
 import  LineSeparator  from '../../components/LineSeparator/'
@@ -29,6 +31,7 @@ const Schedule = ({ data }) => (
                             <Text style={styles.p}>
                                 {item.location}
                                 </Text> 
+                            <Icon style={styles.icon_heart} name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}/>
                         </View>
                     </TouchableOpacity>
                 }

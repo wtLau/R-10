@@ -20,6 +20,10 @@ class SessionContainer extends Component {
     static propTypes = {}
 
     render() {
+        if (this.props.loading)
+            return(
+                <ActivityIndicator animating={true} size="small" color="black" />
+            )
         return <Session data={this.props.sessionData}/>
     }
 }
