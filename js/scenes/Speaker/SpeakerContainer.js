@@ -14,13 +14,7 @@ class SpeakerContainer extends Component {
     static propTypes = {}
 
     render() {
-        // if (this.state.isLoading) {
-        //     return (
-        //         <ActivityIndicator animating={true} size="small" color="black" />
-        //     );
-        // } else {
-            return <Speaker />
-        // }
+        return <Speaker speakerData={this.props.speakerData}/>
     }
 }
 

@@ -41,6 +41,11 @@ export const styles = {
           fontSize: typography.baseSize,
           fontWeight: 'bold',          
           fontFamily: typography.fontMainLight,
-      }
+      },
+      image_icon: {
+            width: 50, 
+            height: 50,
+            borderRadius: 25,
+      },
 }
   

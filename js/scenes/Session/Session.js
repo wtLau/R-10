@@ -7,22 +7,29 @@ import {
     FlatList,
     TouchableOpacity
 } from 'react-native';
-import { goToSession } from '../../lib/navigationHelpers'
+import { goToSession, goToSpeaker } from '../../lib/navigationHelpers'
 import  LineSeparator  from '../../components/LineSeparator/'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
 
 import { styles } from './styles'
 
-const Session = ({ data }) => (
+const Session = ({ sessionData, speakerData }) => (
     <View style={styles.container}>
-        <Text style={styles.p_grey}>{data.location}</Text>
-        <Text style={styles.h3}>{data.title}</Text>
-        <Text style={styles.p_time}>{convertTimeHelper(data.start_time)}</Text>
-        <Text style={styles.p}>{data.description}</Text>
+        <Text style={styles.p_grey}>{sessionData.location}</Text>
+        <Text style={styles.h3}>{sessionData.title}</Text>
+        <Text style={styles.p_time}>{convertTimeHelper(sessionData.start_time)}</Text>
+        <Text style={styles.p}>{sessionData.description}</Text>
         <Text style={styles.p_grey}>Presented by: </Text>
-        <Text style={styles.p}>{data.speaker}</Text>
+
+        <TouchableOpacity onPress={() =>goToSpeaker(speakerData)}>
+            <Image
+                style={styles.image_icon}
+                source={{uri: speakerData.image}} />
+            <Text style={styles.p}>{speakerData.name}</Text>
+        </TouchableOpacity>
+        
         <LineSeparator/>
-        <TouchableOpacity onPress={() =>goToSession('schedule', data)}>
+        <TouchableOpacity onPress={() =>goToSession('schedule', sessionData)}>
             <Text>Remove from Faves</Text>
         </TouchableOpacity>
     </View>

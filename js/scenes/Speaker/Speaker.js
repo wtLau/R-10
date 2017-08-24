@@ -4,17 +4,32 @@ import {
     Text, 
     View,
     Image,
-    FlatList
+    WebView,
+    TouchableOpacity
 } from 'react-native';
 
 import { styles } from './styles'
 
-const Speaker = () => (
+const Speaker = ({speakerData}) => (
     <View style={styles.container}>
-        <Text> This is Speaker Page</Text>
+        <Image
+            style={styles.image_icon}
+            source={{uri: speakerData.image}} />
+        <Text style={styles.p}>{speakerData.name}</Text>
+        <Text> {speakerData.bio}</Text>
+
+        <TouchableOpacity onPress={() => openWeb(speakerData.url)}>
+            <Text>Read More on Wikipedia</Text>
+        </TouchableOpacity>
     </View>
 )
 
+const openWeb = (params) => {
+    <WebView
+        source={{uri: params}}
+        style={{marginTop: 20}}
+        />
+}
 
 Speaker.propTypes = {}
 
