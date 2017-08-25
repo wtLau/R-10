@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 
-import { fetchSpeakers } from '../../redux/modules/Speakers'
+import { fetchSingleSpeaker } from '../../redux/modules/SingleSpeaker'
 import Session from './Session'
 
 class SessionContainer extends Component {
@@ -14,7 +14,7 @@ class SessionContainer extends Component {
       }
 
       componentDidMount() {
-        this.props.dispatch(fetchSpeakers())
+        this.props.dispatch(fetchSingleSpeaker(this.props.sessionData.speaker))
     }
 
     static propTypes = {}
@@ -30,8 +30,8 @@ class SessionContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        speakerData: state.SpeakersData.data,
-        loading: state.SpeakersData.isLoading,
+        speakerData: state.SingleSpeaker.Data,
+        loading: state.SingleSpeaker.isLoading,
     };
   }
 

@@ -10,6 +10,7 @@ import {
 import { goToSession, goToSpeaker } from '../../lib/navigationHelpers'
 import  LineSeparator  from '../../components/LineSeparator/'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
+import { createFave } from '../../config/models'
 
 import { styles } from './styles'
 
@@ -27,9 +28,8 @@ const Session = ({ sessionData, speakerData }) => (
                 source={{uri: speakerData.image}} />
             <Text style={styles.p}>{speakerData.name}</Text>
         </TouchableOpacity>
-        
         <LineSeparator/>
-        <TouchableOpacity onPress={() =>goToSession('schedule', sessionData)}>
+        <TouchableOpacity onPress={() =>createFave(sessionData.session_id)}>
             <Text>Remove from Faves</Text>
         </TouchableOpacity>
     </View>

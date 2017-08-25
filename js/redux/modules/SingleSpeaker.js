@@ -1,3 +1,5 @@
+import { formatDataObject } from '../../lib/helperFunction'
+
 // Action Constants
 const LOAD_SINGLE_SPEAKER = 'LOAD_SINGLE_SPEAKER';
 
@@ -10,13 +12,13 @@ export function loadSingleSpeaker(SingleSpeakerData) {
 }
 
 // Fetch Action, Thunk
-export function fetchSingleSpeaker(speaker_id) {
+export function fetchSingleSpeaker(speakerId) {
   return function (dispatch) {
-    let endpoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speaker_id}`;
+    let endpoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`
     fetch(endpoint)
         .then(response => response.json())
         .then(json => { 
-            const Data = json
+            const Data = formatDataObject(json)
             dispatch(loadSingleSpeaker(Data)) 
         })
         .catch(error => console.log(`Error fetching JSON: ${error}`));
