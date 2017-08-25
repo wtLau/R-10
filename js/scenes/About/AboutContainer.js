@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import {fetchCodeOfConduct} from '../../redux/modules/About'
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, LayoutAnimation } from 'react-native';
 import About from './About'
 
 class AboutContainer extends Component {
@@ -18,12 +18,13 @@ class AboutContainer extends Component {
 
     static propTypes = {}
 
+ 
+
     render() {
         const loading = this.props.COFData.isLoading;
         if (loading) return (
             <ActivityIndicator animating={true} size="small" color="black" />
         )
-
         return <About data={this.props.COFData.Data}/>
     }
 }

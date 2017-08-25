@@ -5,14 +5,17 @@ import {
     View,
     Image,
     FlatList,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 import realm from '../../config/models'
 
 import { styles } from './styles'
 import  LineSeparator  from '../../components/LineSeparator/'
 
-const About = ({ data }) => (
+import ConductItem from '../../components/ConductItem/'
+
+const About = ({ data, toggleDescription }) => (
     <ScrollView>
         <View style={styles.container}>
             <Image 
@@ -28,14 +31,10 @@ const About = ({ data }) => (
                 ItemSeparatorComponent = {()=> <LineSeparator/> }
                 keyExtractor={item => item.title}
                 renderItem={({ item }) => 
-                    <View>
-                        <Text style={styles.title}>{item.title}</Text>
-                        <Text style={styles.p}>{item.description}</Text>
-                    </View>
+                    <ConductItem data={item} />
                 }
             />
         </View>
-        { console.log('the path is: ', realm.path)    }
     </ScrollView>
 )
 
