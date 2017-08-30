@@ -5,22 +5,34 @@ import {
     View,
     Image,
     WebView,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView
 } from 'react-native';
+import CloseIcon from '../../components/CloseIcon/'
+import { goBack } from '../../lib/navigationHelpers'
 
 import { styles } from './styles'
 
 const Speaker = ({speakerData}) => (
     <View style={styles.container}>
-        <Image
-            style={styles.image_icon}
-            source={{uri: speakerData.image}} />
-        <Text style={styles.p}>{speakerData.name}</Text>
-        <Text> {speakerData.bio}</Text>
-
-        <TouchableOpacity onPress={() => openWeb(speakerData.url)}>
-            <Text>Read More on Wikipedia</Text>
-        </TouchableOpacity>
+        <View style={styles.header}>
+            <TouchableOpacity onPress={() => goBack()} style={styles.close_icon}>
+                <CloseIcon/>
+            </TouchableOpacity>
+            <Text style={styles.p_white}>About the Speaker</Text>
+        </View>
+        <ScrollView style={styles.scroll}>
+            <View style={styles.wrapper}>
+                <Image
+                    style={styles.image_icon}
+                    source={{uri: speakerData.image}} />
+                <Text style={styles.h3}>{speakerData.name}</Text>
+                <Text style={styles.bio}> {speakerData.bio}</Text>
+                <TouchableOpacity onPress={() => openWeb(speakerData.url)}>
+                    <Text>Read More on Wikipedia</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     </View>
 )
 
