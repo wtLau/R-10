@@ -9,7 +9,8 @@ export const colors = {
     White: '#ffffff',
     Blue: '#8797D6',
     Purple: '#9963ea',
-    Red: '#cf392a'
+    Red: '#cf392a',
+    Black: '#000000'
 };
 
 export const typography = {
