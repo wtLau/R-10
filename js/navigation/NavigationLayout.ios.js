@@ -65,6 +65,7 @@ class NavigationLayout extends Component {
                 >
                     <StackNavigation
                         id="faves"
+                        navigatorUID="faves"                        
                         initialRoute={Router.getRoute('faves')}
                         defaultRouteConfig= {defaultRouteConfig}                        
                     />
@@ -77,6 +78,7 @@ class NavigationLayout extends Component {
                 >
                     <StackNavigation
                         id="about"
+                        navigatorUID="about"                                                
                         defaultRouteConfig= {defaultRouteConfig}
                         initialRoute={Router.getRoute('about')}
                     />
