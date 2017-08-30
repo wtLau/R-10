@@ -6,27 +6,28 @@ export const styles = {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: colors.White,      
-      paddingLeft: 10,
-      paddingRight: 10,
+      backgroundColor: colors.White,
     },
     p: {
       fontSize: typography.baseSize,
+      fontFamily: typography.main,      
+      paddingLeft: 10,
+      paddingRight: 10,
     },
     title: {
-      fontSize: typography.headerSize,
+      fontSize: typography.iconSize,
       fontWeight: '500',
-      fontFamily: typography.main,   
+      fontFamily: typography.main,
+      paddingTop: 15,
+      paddingBottom: 15, 
+      paddingLeft: 10,
+      paddingRight: 10, 
     },
     image: {
         width: '60%',
         height: 100,
         resizeMode: 'contain',
         padding: 20,
-    },
-    border: {
-        height: StyleSheet.hairlineWidth,
-        backgroundColor: '#999999'
     }
   }
   

@@ -22,10 +22,13 @@ const About = ({ data, toggleDescription }) => (
                 style={styles.image}
                 source={require('../../assets/images/r10_logo.png')}
             />
-            <View style={styles.border}/>
-            <Text>R10 is a conference that focuses on just about any topic related to dev.</Text>
-            <Text style={styles.title}>Date & Venue</Text>
-            <Text>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC</Text>
+            <View>
+                <LineSeparator />
+                <Text style={styles.title}>R10 is a conference that focuses on just about any topic related to dev.</Text>
+                <Text style={styles.title}>Date & Venue</Text>
+                <Text>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC</Text>
+                <Text style={styles.title}>Code of Conduct</Text>
+            </View>
             <FlatList
                 data={data}
                 ItemSeparatorComponent = {()=> <LineSeparator/> }
