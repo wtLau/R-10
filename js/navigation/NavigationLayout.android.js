@@ -65,6 +65,7 @@ class NavigationLayout extends Component {
                 <DrawerNavigationItem
                     id="faves"
                     title="Faves"
+                    navigatorUID="faves"                    
                     renderTitle={(isSelected) => this.renderTitle(isSelected, 'Faves')}
                     selectedStyle={styles.selectedItemStyle}
                     renderIcon={(isSelected) => this.renderIcon("md-heart", isSelected) }
@@ -78,6 +79,7 @@ class NavigationLayout extends Component {
                 <DrawerNavigationItem
                     id="about"
                     title="About"
+                    navigatorUID="about"                    
                     renderTitle={(isSelected) => this.renderTitle(isSelected, 'Schedule')}
                     renderIcon={(isSelected) => this.renderIcon("md-information-circle", isSelected) }
                     selectedStyle={styles.selectedItemStyle}          
