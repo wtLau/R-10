@@ -44,7 +44,8 @@ class NavigationLayout extends Component {
                         defaultRouteConfig= {defaultRouteConfig}
                     />
                 </TabItem>
-                <TabItem
+                {/* TODO: Add Map layout here */}
+                {/* <TabItem
                     id="map"
                     title="Map"
                     renderTitle={this.renderTitle}                    
@@ -55,7 +56,7 @@ class NavigationLayout extends Component {
                         initialRoute={Router.getRoute('map')}
                         defaultRouteConfig= {defaultRouteConfig}                        
                     />
-                </TabItem>
+                </TabItem> */}
                 <TabItem
                     id="faves"
                     title="Faves"

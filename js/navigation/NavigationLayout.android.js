@@ -49,7 +49,8 @@ class NavigationLayout extends Component {
                         defaultRouteConfig= {defaultRouteConfig}
                     />
                 </DrawerNavigationItem>
-                <DrawerNavigationItem
+                {/* TODO: Add Map layout here */}
+                {/* <DrawerNavigationItem
                     id="map"
                     renderTitle={(isSelected) => this.renderTitle(isSelected, 'Map')}   
                     renderIcon={(isSelected) => this.renderIcon("md-map", isSelected) }
@@ -60,7 +61,7 @@ class NavigationLayout extends Component {
                         initialRoute={Router.getRoute('map')}
                         defaultRouteConfig= {defaultRouteConfig}
                     />
-                </DrawerNavigationItem>
+                </DrawerNavigationItem> */}
                 <DrawerNavigationItem
                     id="faves"
                     title="Faves"
