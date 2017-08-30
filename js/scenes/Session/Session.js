@@ -5,38 +5,45 @@ import {
     View,
     Image,
     FlatList,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView
 } from 'react-native';
 import { goToSession, goToSpeaker } from '../../lib/navigationHelpers'
 import  LineSeparator  from '../../components/LineSeparator/'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
 import { createFave,filterFave, queryFave } from '../../config/models'
+import LinearGradientColor from '../../components/LinearGradientColor/'
 
 import { styles } from './styles'
 
 const Session = ({ sessionData, speakerData, onFave, faveId }) => {
     const matchId = faveId.find(fave => fave === sessionData.session_id)
     return (
-        <View style={styles.container}>
-                <Text style={styles.p_grey}>{sessionData.location}</Text>
-                <Text style={styles.h3}>{sessionData.title}</Text>
-                <Text style={styles.p_time}>{convertTimeHelper(sessionData.start_time)}</Text>
-                <Text style={styles.p}>{sessionData.description}</Text>
-                <Text style={styles.p_grey}>Presented by: </Text>
+        <ScrollView>
+            <View style={styles.container}>
+                <View>
+                    <Text style={styles.p_grey}>{sessionData.location}</Text>
+                    <Text style={styles.h3}>{sessionData.title}</Text>
+                    <Text style={styles.p_time}>{convertTimeHelper(sessionData.start_time)}</Text>
+                    <Text style={[styles.p, styles.descript]}>{sessionData.description}</Text>
+                    <Text style={styles.p_grey}>Presented by: </Text>
 
-                <TouchableOpacity onPress={() =>goToSpeaker(speakerData)}>
-                    <Image
-                        style={styles.image_icon}
-                        source={{uri: speakerData.image}} />
-                    <Text style={styles.p}>{speakerData.name}</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.touch} onPress={() =>goToSpeaker(speakerData)}>
+                        <Image
+                            style={styles.image_icon}
+                            source={{uri: speakerData.image}} />
+                        <Text style={[styles.p, styles.name]}>{speakerData.name}</Text>
+                    </TouchableOpacity>
                 <LineSeparator/>
-                <TouchableOpacity onPress={() => onFave(sessionData.session_id)}>
-                    <Text>Add to Faves</Text>
-                    {/* <Text>{filterFave(sessionData.session_id) ? "Add to Faves" : "Remove from Faves"}</Text> */}
-                </TouchableOpacity>
+                </View>
+                <View style={styles.btn_container}>
+                    <TouchableOpacity style={styles.fave_btn}  onPress={() => onFave(sessionData.session_id)}>
+                        <Text style={[styles.p, styles.fave_txt]}>Add to Faves</Text>
+                        {/* <Text>{filterFave(sessionData.session_id) ? "Add to Faves" : "Remove from Faves"}</Text> */}
+                    </TouchableOpacity>
+                </View>
             </View>
-
+        </ScrollView>
     )
 
 }
