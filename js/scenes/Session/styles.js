@@ -70,11 +70,11 @@ export const styles = {
       fave_btn: {
           width: '70%',
           height: 50,
+          borderRadius: 40,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'blue',
-          borderRadius: 40,
-          marginTop: 20
+          marginTop: 20,
+          overflow: 'hidden'
       },
       btn_container: {
           flex: 1,
@@ -85,6 +85,7 @@ export const styles = {
           textAlign: 'center',
           color: colors.White,
           fontWeight: 'bold',
+          backgroundColor: 'transparent',
       }
 }
   

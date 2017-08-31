@@ -14,7 +14,7 @@ const defaultRouteConfig = {
         // titleStyle: {
             
         // },
-        renderBackground: () => <LinearGradientColor/>
+        renderBackground: () => <LinearGradientColor backgroundColor={[colors.Purple, colors.Red]} startY={0.55}/>
     }
 }
 

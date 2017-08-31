@@ -63,14 +63,15 @@ export const styles = {
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'blue',
         borderRadius: 50,
-        marginTop: 20
+        marginTop: 20,
+        overflow: 'hidden'        
     },
     fave_txt: {
         textAlign: 'center',
         color: colors.White,
         fontWeight: 'bold',
+        backgroundColor: 'transparent',        
     }    
 }
   

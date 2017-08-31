@@ -13,6 +13,7 @@ import  LineSeparator  from '../../components/LineSeparator/'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
 import { createFave,filterFave, queryFave } from '../../config/models'
 import LinearGradientColor from '../../components/LinearGradientColor/'
+import { colors } from '../../config/styles'
 
 import { styles } from './styles'
 
@@ -38,6 +39,7 @@ const Session = ({ sessionData, speakerData, onFave, faveId }) => {
                 </View>
                 <View style={styles.btn_container}>
                     <TouchableOpacity style={styles.fave_btn}  onPress={() => onFave(sessionData.session_id)}>
+                        <LinearGradientColor startY={1.60}backgroundColor={[colors.White, colors.Purple]}/>
                         {faveId.find(faveId => faveId.id === sessionData.session_id) ?
                             <Text style={[styles.p, styles.fave_txt]}>Remove from Faves</Text>                            
                             :

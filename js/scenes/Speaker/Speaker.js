@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import CloseIcon from '../../components/CloseIcon/'
 import { goBack } from '../../lib/navigationHelpers'
+import LinearGradientColor from '../../components/LinearGradientColor/'
+import { colors } from '../../config/styles'
 
 import { styles } from './styles'
 
@@ -29,6 +31,7 @@ const Speaker = ({speakerData, openWeb}) => (
                 <Text style={styles.h3}>{speakerData.name}</Text>
                 <Text style={styles.bio}> {speakerData.bio}</Text>
                 <TouchableOpacity style={styles.fave_btn} onPress={() => openWeb(speakerData.url)}>
+                    <LinearGradientColor startY={1.80} backgroundColor={[colors.White, colors.Purple]}/>
                     <Text style={[styles.p, styles.fave_txt]}>Read More on Wikipedia</Text>
                 </TouchableOpacity>
             </View>
