@@ -1,7 +1,7 @@
 /**
  * Global Styles
  */
-import { Platform, StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 
 export const colors = {
     MediumGrey: '#999999',

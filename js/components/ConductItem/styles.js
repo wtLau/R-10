@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { typography, colors } from '../../config/styles'
 
-export const styles = {
+export const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
@@ -29,5 +29,5 @@ export const styles = {
         height: StyleSheet.hairlineWidth,
         backgroundColor: '#999999'
     }
-  }
+  })
   

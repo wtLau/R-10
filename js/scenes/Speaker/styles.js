@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import { typography, colors } from '../../config/styles'
 
 
-export const styles = {
+export const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 20,
@@ -73,5 +73,5 @@ export const styles = {
         fontWeight: 'bold',
         backgroundColor: 'transparent',        
     }    
-}
+})
   

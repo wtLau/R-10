@@ -1,6 +1,7 @@
 import { typography, colors } from '../../config/styles'
+import { StyleSheet } from 'react-native';
 
-export const styles = {
+export const styles = StyleSheet.create({
     h3: {
       fontSize: typography.baseSize,
       fontWeight: '600',
@@ -32,4 +33,4 @@ export const styles = {
         right: 10, 
         bottom: 4,
     }
-  }
+  })
