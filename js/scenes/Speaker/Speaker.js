@@ -13,7 +13,7 @@ import { goBack } from '../../lib/navigationHelpers'
 
 import { styles } from './styles'
 
-const Speaker = ({speakerData}) => (
+const Speaker = ({speakerData, openWeb}) => (
     <View style={styles.container}>
         <View style={styles.header}>
             <TouchableOpacity onPress={() => goBack()} style={styles.close_icon}>
@@ -28,20 +28,13 @@ const Speaker = ({speakerData}) => (
                     source={{uri: speakerData.image}} />
                 <Text style={styles.h3}>{speakerData.name}</Text>
                 <Text style={styles.bio}> {speakerData.bio}</Text>
-                <TouchableOpacity onPress={() => openWeb(speakerData.url)}>
-                    <Text>Read More on Wikipedia</Text>
+                <TouchableOpacity style={styles.fave_btn} onPress={() => openWeb(speakerData.url)}>
+                    <Text style={[styles.p, styles.fave_txt]}>Read More on Wikipedia</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
     </View>
 )
-
-const openWeb = (params) => {
-    <WebView
-        source={{uri: params}}
-        style={{marginTop: 20}}
-        />
-}
 
 Speaker.propTypes = {}
 

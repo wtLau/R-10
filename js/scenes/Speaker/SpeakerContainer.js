@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Linking } from 'react-native';
 
 import Speaker from './Speaker'
 
@@ -14,8 +14,18 @@ class SpeakerContainer extends Component {
 
     static propTypes = {}
 
+    openWeb(link) {
+        Linking.canOpenURL(link).then(supported => {
+          if (supported) {
+            Linking.openURL(link);
+          } else {
+            console.log('Don\'t know how to open URI: ' + link);
+          }
+        });
+    }
+
     render() {
-        return <Speaker speakerData={this.props.speakerData}/>
+        return <Speaker speakerData={this.props.speakerData} openWeb={this.openWeb}/>
     }
 }
 

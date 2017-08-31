@@ -57,6 +57,20 @@ export const styles = {
         fontSize: typography.baseSize,
         fontFamily: typography.fontMainLight,
         lineHeight: 25,        
+    },
+    fave_btn: {
+        width: '75%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'blue',
+        borderRadius: 50,
+        marginTop: 20
+    },
+    fave_txt: {
+        textAlign: 'center',
+        color: colors.White,
+        fontWeight: 'bold',
     }    
 }
   
