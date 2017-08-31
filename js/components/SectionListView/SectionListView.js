@@ -13,7 +13,7 @@ import FaveHeart  from '../../components/FaveHeart/'
 import { styles } from './styles'
 import  LineSeparator  from '../LineSeparator/'
 
-const SectionListView = ({ data, pageOn }) => (
+const SectionListView = ({ data, pageOn, faveId }) => (
     <SectionList
         renderSectionHeader= { 
             (headerItem) => 
@@ -32,9 +32,13 @@ const SectionListView = ({ data, pageOn }) => (
                                 </Text> 
                         </View>
                     </TouchableOpacity>
-                    <View style={styles.faveHeart}>
-                        <FaveHeart/>
-                    </View>
+                    {faveId.find(faveId => faveId.id === item.session_id) ?
+                        <View style={styles.faveHeart}>
+                            <FaveHeart/>
+                        </View>
+                        :
+                        <Text/>
+                    }
                 </View>
             }
         ItemSeparatorComponent = {()=> <LineSeparator/> }

@@ -6,9 +6,9 @@ import SectionListView from '../../components/SectionListView/'
 
 import { styles } from './styles'
 
-const Faves = ({ data }) => (
+const Faves = ({ data, faveId }) => (
     <View style={styles.container}>
-        <SectionListView data={data} pageOn='faves'/>
+        <SectionListView data={data} faveId={faveId}pageOn='faves'/>
     </View>
 )
 

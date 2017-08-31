@@ -4,9 +4,9 @@ import { View } from 'react-native';
 import { styles } from './styles'
 import SectionListView from '../../components/SectionListView/'
 
-const Schedule = ({ data }) => (
+const Schedule = ({ data, faveId }) => (
     <View style={styles.container}>
-        <SectionListView data={data} pageOn='schedule'/>
+        <SectionListView data={data} faveId={faveId} pageOn='schedule'/>
     </View>
 )
 

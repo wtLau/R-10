@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Realm from '../../config/models'
 import { queryFave } from '../../config/models'
 import { fetchSession } from '../../redux/modules/Session'
-import { fetchFave } from '../../redux/modules/Fave'
+import { fetchFave, loadFaveID } from '../../redux/modules/Fave'
 import Schedule from './Schedule'
 
 class ScheduleContainer extends Component {
@@ -17,7 +17,7 @@ class ScheduleContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchSession())
-        this.props.dispatch(fetchFave())
+        this.props.dispatch(loadFaveID())
         Realm.addListener('change', () => this.props.dispatch(fetchFave()))
     }
 
@@ -28,7 +28,7 @@ class ScheduleContainer extends Component {
         if (loading) return (
             <ActivityIndicator animating={true} size="small" color="black" />
         )
-        return <Schedule data={this.props.data}/>
+        return <Schedule data={this.props.data} faveId={this.props.faveId}/>
     }
 }
 
@@ -52,6 +52,7 @@ function mapStateToProps(state) {
     return {
         data: state.SessionData.data,
         loading: state.SessionData.isLoading,
+        faveId: state.FaveData.faveId
     };
   }
 

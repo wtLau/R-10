@@ -32,14 +32,15 @@ class FavesContainer extends Component {
         //         <ActivityIndicator animating={true} size="small" color="black" />
         //     );
         // } else {
-            return <Faves data={this.props.faveId} />
+            return <Faves data={this.props.faveData} faveId={this.props.faveId}/>
         // }
     }
 }
 
 function mapStateToProps(state) {
     return {
-        faveId: state.FaveData.Data
+        faveData: state.FaveData.Data,
+        faveId: state.FaveData.faveId        
     };
   }
 export default connect(mapStateToProps)(FavesContainer)

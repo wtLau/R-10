@@ -13,6 +13,14 @@ export function loadFave(FaveData) {
   };
 }
 
+export function loadFaveID(faveId) {
+    const FaveData = queryFave(faveId)
+  return {
+    type: LOAD_FAVE_ID,
+    payload: FaveData
+  };
+}
+
 // Fetch Action, Thunk
 export function fetchFave() {
     return function (dispatch) {
@@ -34,18 +42,21 @@ export function fetchFave() {
 // Reducers
 const initialState = {
     isLoading: true,
-    Data: []
+    Data: [],
+    faveId: []
 };
 
 export function FaveReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_FAVE:
-        return {  
+        return { 
+            ...state,
             isLoading: false, 
             Data: action.payload 
         }
     case LOAD_FAVE_ID:
-        return {  
+        return {
+            ...state,
             isLoading: false, 
             faveId: action.payload 
         };
