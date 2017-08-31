@@ -73,7 +73,7 @@ export const styles = {
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: 'blue',
-          borderRadius: 50,
+          borderRadius: 40,
           marginTop: 20
       },
       btn_container: {

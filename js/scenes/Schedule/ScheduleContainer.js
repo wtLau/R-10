@@ -18,6 +18,7 @@ class ScheduleContainer extends Component {
     componentDidMount() {
         this.props.dispatch(fetchSession())
         this.props.dispatch(loadFaveID())
+        Realm.addListener('change', () => this.props.dispatch(loadFaveID()))
         Realm.addListener('change', () => this.props.dispatch(fetchFave()))
     }
 

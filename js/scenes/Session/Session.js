@@ -38,8 +38,12 @@ const Session = ({ sessionData, speakerData, onFave, faveId }) => {
                 </View>
                 <View style={styles.btn_container}>
                     <TouchableOpacity style={styles.fave_btn}  onPress={() => onFave(sessionData.session_id)}>
-                        <Text style={[styles.p, styles.fave_txt]}>Add to Faves</Text>
-                        {/* <Text>{filterFave(sessionData.session_id) ? "Add to Faves" : "Remove from Faves"}</Text> */}
+                        {faveId.find(faveId => faveId.id === sessionData.session_id) ?
+                            <Text style={[styles.p, styles.fave_txt]}>Remove from Faves</Text>                            
+                            :
+                            <Text style={[styles.p, styles.fave_txt]}>Add to Faves</Text>                            
+                        }
+
                     </TouchableOpacity>
                 </View>
             </View>

@@ -21,11 +21,11 @@ class SessionContainer extends Component {
     static propTypes = {}
 
     onFave = (id) => {
-        // if (filterFave(id)) {
-            createFave(id)
-        // } else {
-            // deleteFave(id)
-        //  }
+        if (this.props.faveId.find(faveId => faveId.id === this.props.sessionData.session_id)) {
+            deleteFave(id)                        
+        } else {
+            createFave(id)                           
+        }
     }
 
     render() {
@@ -41,7 +41,7 @@ function mapStateToProps(state) {
     return {
         speakerData: state.SingleSpeaker.Data,
         loading: state.SingleSpeaker.isLoading,
-        faveId: state.FaveData.Data
+        faveId: state.FaveData.faveId
     };
   }
 
