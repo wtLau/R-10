@@ -6,7 +6,7 @@ This is a mobile application using React Native for an upcoming developer confer
 
 ## Screen-Shots
 
-<!-- TODO -->
+![ISO ScreenShot](./js/assets/images/Screen_Shot.png =100x20) 
 
 ## Features
 
@@ -21,22 +21,22 @@ Add me to your directory.
 
 ### 2. Install the dev dependencies
 
-Next you'll need to run `npm install` to install the node modules you'll need for React, Babel etc.
+Next you'll need to run `npm install` to install the node modules you'll need for React, React-Native, Babel etc.
 
-### Link Native Dependency
+### Link Native Dependency(if added new contents)
 
 ```react-native link```
 
 ### Starting the Project
 
 ### ios
-
+``` react-native start package```
 ```react-native run-ios --simulator="iPhone SE"```
 
 #### Android
 
 launch an Android emulator from within Android Studio first
-
+``` react-native start package```
 ```react-native run-android```
 
 ## Built With
