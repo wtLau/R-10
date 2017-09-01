@@ -53,6 +53,7 @@ launch an Android emulator from within Android Studio first
 - [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 - [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons) - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.
 - [React-Native-Linear-Gradient](https://github.com/react-native-community/react-native-linear-gradient) - A <LinearGradient> component for react-native
+- [react-native-maps](https://github.com/airbnb/react-native-maps/blob/master/docs/installation.md) - React Native Map components for iOS + Android
 
 
 ## Developed By
