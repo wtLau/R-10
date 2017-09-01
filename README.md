@@ -6,7 +6,9 @@ This is a mobile application using React Native for an upcoming developer confer
 
 ## Screen-Shots
 
-![ISO ScreenShot](./js/assets/images/Screen_Shot.png width="100" height="150") 
+<img src="./js/assets/images/IOS-iPhone-portrait.png" height="500px" alt="Splash-screen screenshot"/>
+
+<img src="./js/assets/images/Screen_Shot.png" height="500px" alt="Ios App screenshot"/>
 
 ## Features
 
