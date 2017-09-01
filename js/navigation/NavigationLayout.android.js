@@ -16,9 +16,6 @@ import LinearGradientColor from '../components/LinearGradientColor/'
 const defaultRouteConfig = {
     navigationBar: {
         tintColor: colors.White,
-        // titleStyle: {
-            
-        // },
         renderBackground: () => <LinearGradientColor backgroundColor={[colors.Purple, colors.Red]} startY={0.55}/>
     }
 }
@@ -49,8 +46,7 @@ class NavigationLayout extends Component {
                         defaultRouteConfig= {defaultRouteConfig}
                     />
                 </DrawerNavigationItem>
-                {/* TODO: Add Map layout here */}
-                {/* <DrawerNavigationItem
+                <DrawerNavigationItem
                     id="map"
                     renderTitle={(isSelected) => this.renderTitle(isSelected, 'Map')}   
                     renderIcon={(isSelected) => this.renderIcon("md-map", isSelected) }
@@ -58,10 +54,11 @@ class NavigationLayout extends Component {
                 >
                     <StackNavigation
                         id="map"
+                        navigatorUID="map"                        
                         initialRoute={Router.getRoute('map')}
                         defaultRouteConfig= {defaultRouteConfig}
                     />
-                </DrawerNavigationItem> */}
+                </DrawerNavigationItem>
                 <DrawerNavigationItem
                     id="faves"
                     title="Faves"
