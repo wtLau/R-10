@@ -78,7 +78,7 @@ class NavigationLayout extends Component {
                     id="about"
                     title="About"
                     navigatorUID="about"                    
-                    renderTitle={(isSelected) => this.renderTitle(isSelected, 'Schedule')}
+                    renderTitle={(isSelected) => this.renderTitle(isSelected, 'About')}
                     renderIcon={(isSelected) => this.renderIcon("md-information-circle", isSelected) }
                     selectedStyle={styles.selectedItemStyle}          
                 >
