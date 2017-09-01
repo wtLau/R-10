@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ActivityIndicator, Linking } from 'react-native';
+import { Linking } from 'react-native';
 
 import Speaker from './Speaker'
 
@@ -12,7 +12,6 @@ class SpeakerContainer extends Component {
         }
       }
 
-    static propTypes = {}
 
     openWeb(link) {
         Linking.canOpenURL(link).then(supported => {
@@ -27,6 +26,18 @@ class SpeakerContainer extends Component {
     render() {
         return <Speaker speakerData={this.props.speakerData} openWeb={this.openWeb}/>
     }
+}
+
+SpeakerContainer.propTypes = {
+  openWeb: PropTypes.func,
+  speakerData: PropTypes.shape({
+      bio: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      session: PropTypes.string.isRequired,
+      speaker_id: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,        
+      }),
 }
 
 export default SpeakerContainer

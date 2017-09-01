@@ -24,23 +24,46 @@ class FavesContainer extends Component {
         this.props.dispatch(fetchFave())
     }
 
-    static propTypes = {}
+
 
     render() {
-        // if (this.state.isLoading) {
-        //     return (
-        //         <ActivityIndicator animating={true} size="small" color="black" />
-        //     );
-        // } else {
+        if (this.props.loading) {
+            return (
+                <ActivityIndicator animating={true} size="small" color="black" />
+            );
+        } else {
             return <Faves data={this.props.faveData} faveId={this.props.faveId}/>
-        // }
+        }
     }
+}
+
+FavesContainer.propTypes = {
+    faveData: PropTypes.arrayOf(
+        PropTypes.shape({
+            data: PropTypes.arrayOf(PropTypes.shape({
+                description: PropTypes.string.isRequired,
+                location: PropTypes.string.isRequired,
+                session_id: PropTypes.string.isRequired,
+                speaker: PropTypes.string.isRequired,
+                start_time: PropTypes.number.isRequired,
+                title: PropTypes.string.isRequired,
+            })),
+            title: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    }),
+    loading: PropTypes.bool.isRequired    
 }
 
 function mapStateToProps(state) {
     return {
         faveData: state.FaveData.Data,
-        faveId: state.FaveData.faveId        
+        faveId: state.FaveData.faveId,
+        loading: state.FaveData.isLoading,        
     };
   }
+  
 export default connect(mapStateToProps)(FavesContainer)

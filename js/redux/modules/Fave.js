@@ -43,7 +43,7 @@ export function fetchFave() {
 const initialState = {
     isLoading: true,
     Data: [],
-    faveId: []
+    faveId: {}
 };
 
 export function FaveReducer(state = initialState, action) {

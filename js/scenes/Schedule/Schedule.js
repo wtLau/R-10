@@ -27,7 +27,11 @@ Schedule.propTypes = {
                 })
             )
         })
-    )
+    ),
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    })
 }
 
 export default Schedule

@@ -28,7 +28,7 @@ export function fetchSingleSpeaker(speakerId) {
 // Reducers
 const initialState = {
     isLoading: true,
-    Data: [],
+    Data: {},
 };
 
 export function SingleSpeakerReducer(state = initialState, action) {

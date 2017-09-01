@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { StyleSheet, View,LayoutAnimation, Animated ,TouchableOpacity, Text} from 'react-native';
+import { View,LayoutAnimation, Animated ,TouchableOpacity, Text} from 'react-native';
 
 import { styles } from './styles'
 

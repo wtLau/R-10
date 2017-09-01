@@ -4,7 +4,6 @@ import {
     Text, 
     View,
     Image,
-    WebView,
     TouchableOpacity,
     ScrollView
 } from 'react-native';
@@ -39,6 +38,18 @@ const Speaker = ({speakerData, openWeb}) => (
     </View>
 )
 
-Speaker.propTypes = {}
+
+Speaker.propTypes = {
+    openWeb: PropTypes.func,
+    speakerData: PropTypes.shape({
+        bio: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        session: PropTypes.string.isRequired,
+        speaker_id: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,        
+        }),
+  }
+  
 
 export default Speaker

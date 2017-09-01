@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import {fetchCodeOfConduct} from '../../redux/modules/About'
-import { ActivityIndicator, LayoutAnimation } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import About from './About'
 
 class AboutContainer extends Component {

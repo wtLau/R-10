@@ -4,21 +4,18 @@ import {
     Text, 
     View,
     Image,
-    FlatList,
     TouchableOpacity,
     ScrollView
 } from 'react-native';
-import { goToSession, goToSpeaker } from '../../lib/navigationHelpers'
+import { goToSpeaker } from '../../lib/navigationHelpers'
 import  LineSeparator  from '../../components/LineSeparator/'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
-import { createFave,filterFave, queryFave } from '../../config/models'
 import LinearGradientColor from '../../components/LinearGradientColor/'
 import { colors } from '../../config/styles'
 
 import { styles } from './styles'
 
 const Session = ({ sessionData, speakerData, onFave, faveId }) => {
-    const matchId = faveId.find(fave => fave === sessionData.session_id)
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -53,8 +50,30 @@ const Session = ({ sessionData, speakerData, onFave, faveId }) => {
     )
 
 }
-// description, location, session_id, speaker, start_time, title
 
-Session.propTypes = {}
+Session.propTypes = {
+    sessionData: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        session_id: PropTypes.string.isRequired,
+        speaker: PropTypes.string.isRequired,
+        start_time: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,        
+        }),
+    speakerData: PropTypes.shape({
+        bio: PropTypes.string,
+        image: PropTypes.string,
+        name: PropTypes.string,
+        session: PropTypes.string,
+        speaker_id: PropTypes.string,
+        url: PropTypes.string,        
+        }),
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    }),
+    loading: PropTypes.bool,
+    onFave: PropTypes.func.isRequired,
+}
 
 export default Session

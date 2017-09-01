@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { fetchSingleSpeaker } from '../../redux/modules/SingleSpeaker'
 import Session from './Session'
-import { createFave, deleteFave, filterFave } from '../../config/models'
+import { createFave, deleteFave } from '../../config/models'
 
 class SessionContainer extends Component {
     static route = {
@@ -35,6 +35,31 @@ class SessionContainer extends Component {
             )
         return <Session sessionData={this.props.sessionData} speakerData= {this.props.speakerData} onFave={this.onFave} faveId={this.props.faveId}/>
     }
+}
+SessionContainer.propTypes = {
+    dispatch: PropTypes.func,
+    find: PropTypes.func,
+    sessionData: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        session_id: PropTypes.string.isRequired,
+        speaker: PropTypes.string.isRequired,
+        start_time: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,        
+        }),
+    speakerData: PropTypes.shape({
+        bio: PropTypes.string,
+        image: PropTypes.string,
+        name: PropTypes.string,
+        session: PropTypes.string,
+        speaker_id: PropTypes.string,
+        url: PropTypes.string,        
+        }),
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    }),
+    loading: PropTypes.bool
 }
 
 function mapStateToProps(state) {

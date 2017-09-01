@@ -5,7 +5,6 @@ import {
     View,
     SectionList,
     TouchableOpacity,
-    Platform
 } from 'react-native';
 import { goToSession } from '../../lib/navigationHelpers'
 import { convertTimeHelper } from '../../lib/timeConvertHelper'
@@ -46,5 +45,27 @@ const SectionListView = ({ data, pageOn, faveId }) => (
         sections={data}
     />
 )
+
+
+SectionListView.propTypes = {
+    pageOn: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            data: PropTypes.arrayOf(PropTypes.shape({
+                description: PropTypes.string.isRequired,
+                location: PropTypes.string.isRequired,
+                session_id: PropTypes.string.isRequired,
+                speaker: PropTypes.string.isRequired,
+                start_time: PropTypes.number.isRequired,
+                title: PropTypes.string.isRequired,
+            })),
+            title: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    }),
+  }
 
 export default SectionListView

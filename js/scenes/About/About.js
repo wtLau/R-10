@@ -6,16 +6,14 @@ import {
     Image,
     FlatList,
     ScrollView,
-    TouchableOpacity
 } from 'react-native';
-import realm from '../../config/models'
 
 import { styles } from './styles'
 import  LineSeparator  from '../../components/LineSeparator/'
 
 import ConductItem from '../../components/ConductItem/'
 
-const About = ({ data, toggleDescription }) => (
+const About = ({ data }) => (
     <ScrollView>
         <View style={styles.container}>
             <Image 

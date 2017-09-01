@@ -12,7 +12,25 @@ const Faves = ({ data, faveId }) => (
     </View>
 )
 
+Faves.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            data: PropTypes.arrayOf(PropTypes.shape({
+                description: PropTypes.string.isRequired,
+                location: PropTypes.string.isRequired,
+                session_id: PropTypes.string.isRequired,
+                speaker: PropTypes.string.isRequired,
+                start_time: PropTypes.number.isRequired,
+                title: PropTypes.string.isRequired,
+            })),
+            title: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    faveId: PropTypes.objectOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        faved_on: PropTypes.instanceOf(Date).isRequired,
+    }))
+}
 
-Faves.propTypes = {}
 
 export default Faves

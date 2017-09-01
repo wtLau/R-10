@@ -4,7 +4,6 @@ import { colors } from '../../config/styles'
 
 export const styles = StyleSheet.create({
     border: {
-        // flex: 1,
         height: StyleSheet.hairlineWidth,
         backgroundColor: colors.LightGrey
     }

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import Realm from '../../config/models'
-import { queryFave } from '../../config/models'
 import { fetchSession } from '../../redux/modules/Session'
 import { fetchFave, loadFaveID } from '../../redux/modules/Fave'
 import Schedule from './Schedule'
@@ -22,14 +21,19 @@ class ScheduleContainer extends Component {
         Realm.addListener('change', () => this.props.dispatch(fetchFave()))
     }
 
-    static propTypes = {}
+
 
     render() {
+   let faveId = [];
         const loading = this.props.loading;
-        if (loading) return (
-            <ActivityIndicator animating={true} size="small" color="black" />
-        )
-        return <Schedule data={this.props.data} faveId={this.props.faveId}/>
+        if (loading) {
+            return (
+                <ActivityIndicator animating={true} size="small" color="black" />
+            )
+        }  else {
+            faveId = this.props.faveId
+            return <Schedule data={this.props.data} faveId={faveId}/>
+        }
     }
 }
 
@@ -46,6 +50,10 @@ ScheduleContainer.propTypes = {
             title: PropTypes.string.isRequired,        
             }))
         })),
+    faveId: PropTypes.shape({
+        id: PropTypes.string,
+        faved_on: PropTypes.instanceOf(Date),
+    }),
     loading: PropTypes.bool.isRequired
 }
 
