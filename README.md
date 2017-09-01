@@ -6,7 +6,7 @@ This is a mobile application using React Native for an upcoming developer confer
 
 ## Screen-Shots
 
-![ISO ScreenShot](./js/assets/images/Screen_Shot.png =100x20) 
+![ISO ScreenShot](./js/assets/images/Screen_Shot.png) 
 
 ## Features
 
