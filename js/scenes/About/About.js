@@ -24,17 +24,20 @@ const About = ({ data }) => (
                 <LineSeparator />
                 <Text style={styles.title}>R10 is a conference that focuses on just about any topic related to dev.</Text>
                 <Text style={styles.title}>Date & Venue</Text>
-                <Text>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC</Text>
+                <Text style={styles.p}>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver, BC</Text>
                 <Text style={styles.title}>Code of Conduct</Text>
             </View>
-            <FlatList
-                data={data}
-                ItemSeparatorComponent = {()=> <LineSeparator/> }
-                keyExtractor={item => item.title}
-                renderItem={({ item }) => 
-                    <ConductItem data={item} />
-                }
-            />
+        </View>
+        <View style={styles.list}>
+            {
+                data.map((item) => {
+                return <ConductItem data={item} key={item.title} />
+            })
+            }
+        </View>
+        <View style={styles.footer}>
+            <LineSeparator />
+            <Text style={styles.copyRight}> &copy; Brian Lau 2017 </Text>
         </View>
     </ScrollView>
 )

@@ -46,15 +46,18 @@ export default class ConductItem extends Component {
 
 
         return (
-            <View> 
+            <View style={styles.container}> 
                 <TouchableOpacity onPress={this.toggleDescription}>
                     {/* <Animated.Text style={animatedStyle}>
                         {this.state.display ? '-': '+'}
                         </Animated.Text> */}
-                    <Text style={styles.title}>
+                    <View style={styles.wrapper}>
+                    <Text style={styles.icon}>
                         {this.state.display ? '-': '+'}
-                        {this.props.data.title}
                         </Text>
+                    <Text style={styles.title}>    {this.props.data.title}
+                        </Text>
+                    </View>
                 </TouchableOpacity>
                 {this.state.display && <Text style={styles.p}>{this.props.data.description}</Text>}
             </View>

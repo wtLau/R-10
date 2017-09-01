@@ -4,30 +4,31 @@ import { typography, colors } from '../../config/styles'
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
       backgroundColor: colors.White,      
       paddingLeft: 10,
       paddingRight: 10,
     },
     p: {
       fontSize: typography.baseSize,
+      fontFamily: typography.fontMainLight,  
+      paddingTop: 15,          
     },
     title: {
-      fontSize: typography.iconSize,
+      fontSize: typography.baseSize,
       fontWeight: '500',
-      fontFamily: typography.main,
+      fontFamily: typography.fontMain,
       color: colors.Purple,   
+
     },
-    image: {
-        width: '60%',
-        height: 100,
-        resizeMode: 'contain',
-        padding: 20,
+    wrapper: {
+      flexDirection: 'row',
+      alignItems: 'center'
     },
-    border: {
-        height: StyleSheet.hairlineWidth,
-        backgroundColor: '#999999'
+    icon: {
+      fontSize: typography.baseSize,
+      fontWeight: '500',
+      fontFamily: typography.fontMain,
+      color: colors.Purple, 
     }
   })
   

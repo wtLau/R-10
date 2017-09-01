@@ -28,6 +28,21 @@ export const styles = {
         height: 100,
         resizeMode: 'contain',
         padding: 20,
+    },
+    footer: {
+      marginTop: 25,
+    },
+    copyRight: {
+      fontSize: typography.baseSize,
+      fontFamily: typography.fontMainLight, 
+      marginTop: 20,
+      marginBottom: 20,
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
+    list: {
+      paddingLeft: 10,
+      paddingRight: 10,
     }
   }
   
