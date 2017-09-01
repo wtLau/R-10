@@ -7,22 +7,22 @@ export const styles = StyleSheet.create({
       backgroundColor: colors.White,      
       paddingLeft: 10,
       paddingRight: 10,
+      paddingTop: 10,
     },
     p: {
       fontSize: typography.baseSize,
       fontFamily: typography.fontMainLight,  
-      paddingTop: 15,          
+      paddingTop: 15,                   
+      paddingBottom: 15,          
     },
     title: {
       fontSize: typography.baseSize,
       fontWeight: '500',
       fontFamily: typography.fontMain,
       color: colors.Purple,   
-
     },
     wrapper: {
       flexDirection: 'row',
-      alignItems: 'center'
     },
     icon: {
       fontSize: typography.baseSize,

@@ -52,11 +52,11 @@ export default class ConductItem extends Component {
                         {this.state.display ? '-': '+'}
                         </Animated.Text> */}
                     <View style={styles.wrapper}>
-                    <Text style={styles.icon}>
-                        {this.state.display ? '-': '+'}
-                        </Text>
-                    <Text style={styles.title}>    {this.props.data.title}
-                        </Text>
+                        <Text style={styles.icon}>
+                            {this.state.display ? '-': '+'}
+                            </Text>
+                        <Text style={styles.title}>    {this.props.data.title}
+                            </Text>
                     </View>
                 </TouchableOpacity>
                 {this.state.display && <Text style={styles.p}>{this.props.data.description}</Text>}

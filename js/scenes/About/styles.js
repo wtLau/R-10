@@ -10,14 +10,14 @@ export const styles = {
     },
     p: {
       fontSize: typography.baseSize,
-      fontFamily: typography.main,      
+      fontFamily: typography.fontMainLight,      
       paddingLeft: 10,
       paddingRight: 10,
     },
     title: {
       fontSize: typography.iconSize,
       fontWeight: '500',
-      fontFamily: typography.main,
+      fontFamily: typography.fontMain,
       paddingTop: 15,
       paddingBottom: 15, 
       paddingLeft: 10,
