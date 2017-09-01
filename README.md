@@ -6,7 +6,7 @@ This is a mobile application using React Native for an upcoming developer confer
 
 ## Screen-Shots
 
-![ISO ScreenShot](./js/assets/images/Screen_Shot.png) 
+![ISO ScreenShot](./js/assets/images/Screen_Shot.png=100x150) 
 
 ## Features
 
@@ -30,14 +30,15 @@ Next you'll need to run `npm install` to install the node modules you'll need fo
 ### Starting the Project
 
 ### ios
-``` react-native start package```
-```react-native run-ios --simulator="iPhone SE"```
+
+- ``` react-native start package```
+- ```react-native run-ios --simulator="iPhone SE"```
 
 #### Android
 
-launch an Android emulator from within Android Studio first
-``` react-native start package```
-```react-native run-android```
+- launch an Android emulator from within Android Studio first
+- ``` react-native start package```
+- ```react-native run-android```
 
 ## Built With
 
